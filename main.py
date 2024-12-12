@@ -1,21 +1,26 @@
-#Escribir una función que calcule el total de una factura tras aplicarle el IVA.
-#La función debe recibir la cantidad sin IVA y el porcentaje de IVA a aplicar,
-#y devolver el total de la factura. Si se invoca la función sin pasarle el porcentaje de IVA,
-#deberá aplicar un 21%.
+#Escribir una función que calcule el área de un círculo y otra que calcule el volumen
+#de un cilindro usando la primera función.
 
-def calcular_iva(precio, tasa_iva):
-    iva = precio * (tasa_iva / 100)
-    total_a_pagar = precio + iva
-    return total_a_pagar
+#Área de un círculo
+print("Área de un circulo")
+def calcular_area_circulo(radio):
+    pi = 3.14
+    area = pi * (radio * radio)
+    return area
 
-precio = float(input("Ingrese el precio del producto: "))
-aplicar_iva = input("Desea ingresar un IVA diferente (sí/no): ").lower()
+radio = float(input("Ingrese el radio del círculo: "))
 
-if aplicar_iva == "sí" or aplicar_iva == "si":
-   tasa_iva = float(input("Ingrese la tasa del IVA a aplicar: "))
-else:
-    tasa_iva = 21
+print(f"El área del circulo es: {calcular_area_circulo(radio)}")
+print(" ")
 
+#Área de un cilindro
+print("Área de un cilindro")
+def calcular_area_cilindro(altura, radio):
+    pi = 3.14
+    area = ((2 * pi) * radio * altura) + ((2 * pi) * (radio * radio))
+    return area
 
-print(f"El precio del producto sin IVA es: {precio}")
-print(f"EL precio del proucto con IVA es: {calcular_iva(precio, tasa_iva)}")
+radio = float(input("Ingrese el radio del cilindro: "))
+altura = float(input("Ingrese la altura del cilindro: "))
+
+print(f"El área del cilindro es: {calcular_area_cilindro(altura, radio)}")
